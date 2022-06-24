@@ -7,6 +7,7 @@ const Board = () => {
   const [grid, setGrid] = useState([]);
   const [nonMineCount, setNonMineCount] = useState(0);
   const [mineLocations, setMineLocations] = useState([]);
+  const [gameOver, setGameOver] = useState(false);
 
   // ComponentDidMount
   useEffect(() => {
@@ -34,7 +35,7 @@ const Board = () => {
 
   // Reveal Cell
   const revealCell = (x, y) => {
-    if (grid[x][y].revealed) return;
+    if (grid[x][y].revealed || gameOver) return;
     let newGrid = JSON.parse(JSON.stringify(grid));
     if(newGrid[x][y].value === 'X') {
       alert('Mine Found!')
@@ -42,16 +43,21 @@ const Board = () => {
         newGrid[mineLocations[i][0]][mineLocations[i][1]].revealed = true;
       }
       setGrid(newGrid);
+      setGameOver(true);
     } else {
       let newRevealedBoard = revealed(newGrid, x, y, nonMineCount);
       setGrid(newRevealedBoard.arr);
       setNonMineCount(newRevealedBoard.newNonMinesCount)
+      if(newRevealedBoard.newNonMinesCount === 0) {
+        setGameOver(true);
+      }
     };
   };
 
   return (
     <div>
       <p>{nonMineCount}</p>
+      <p>{nonMineCount === 0 ? "You Win" : gameOver ? "Game Over" : ""}</p>
       <div style={{display: "flex", flexDirection: "column", alignItems: "center"}}>
         {grid.map((singleRow, index1) => {
           return (
