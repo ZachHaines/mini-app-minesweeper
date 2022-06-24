@@ -28,8 +28,8 @@ On each turn, the user clicks on a square to uncover it. If the square:
 - [X] Submit a link to your repository below: https://github.com/ZachHaines/mini-app-minesweeper
 
 ## Level 1
-- [ ] Establish a react front-end minesweeper game board with in-memory game data.
-- [ ] Establish basic game logic that enforces the above game rules on a 10x10 board.
+- [X] Establish a react front-end minesweeper game board with in-memory game data.
+- [X] Establish basic game logic that enforces the above game rules on a 10x10 board.
 - [ ] Write JEST test to verify gameplay logic and presentation logic (achieve 80% test coverage).
 
 ## Level 2
