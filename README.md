@@ -21,11 +21,11 @@ On each turn, the user clicks on a square to uncover it. If the square:
 - The last rule winds up uncovering large areas of the board in one turn. This helps speed up gameplay. The user wins when they uncover all squares that don’t have mines.
 
 ## Setup:
-- [ ] Create an empty git repository with a client and server directory.
-- [ ] Link this repository to a new repository on GitHub as your remote.
+- [X] Create an empty git repository with a client and server directory.
+- [X] Link this repository to a new repository on GitHub as your remote.
 
 ## Submitting the project:
-- [ ] Submit a link to your repository below.
+- [X] Submit a link to your repository below: https://github.com/ZachHaines/mini-app-minesweeper
 
 ## Level 1
 - [ ] Establish a react front-end minesweeper game board with in-memory game data.
